@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.Arrays;
 
 @ToString
-public class Flower {
+public class Flower extends Item {
     @Getter
     private int[] color = new int[3];
     @Getter @Setter
@@ -23,5 +23,10 @@ public class Flower {
 
     public void setColor(int[] color) {
         this.color = Arrays.copyOf(color, color.length);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Flower of type" + flowerType;
     }
 }

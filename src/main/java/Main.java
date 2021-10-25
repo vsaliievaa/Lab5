@@ -1,4 +1,6 @@
 import flowerstore.Flower;
+import flowerstore.FlowerBucket;
+import flowerstore.FlowerPack;
 import flowerstore.FlowerType;
 
 public class Main {
@@ -14,7 +16,15 @@ public class Main {
             System.out.println(flower);
         }
 
-        color = new int[]{0, 127, 0};
+//        color = new int[]{0, 127, 0};
+        Flower flower = new Flower(FlowerType.ROSE);
+//        System.out.println(flower.toString());
+        FlowerPack pack = new FlowerPack(flower, 10);
+        System.out.println(pack.getFlower());
+        Flower newFlower = new Flower(FlowerType.TULIP);
+        pack.setFlower(newFlower);
+        System.out.println(pack.getFlower());
+
     }
 
 
