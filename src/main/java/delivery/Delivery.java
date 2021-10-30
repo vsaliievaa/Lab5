@@ -3,8 +3,7 @@ package delivery;
 import flowerstore.Item;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface Delivery {
+    boolean deliver(ArrayList<Item> items);
 }
-//private ArrayList<FlowerPack> flowerPacks = new ArrayList<>()
