@@ -1,6 +1,8 @@
 package order;
 
+import delivery.PostDeliveryStrategy;
 import lombok.Setter;
+import payment.CreditCardPaymentStrategy;
 import payment.Payment;
 import delivery.Delivery;
 import flowerstore.Item;
@@ -15,6 +17,13 @@ public class Order {
     private Delivery delivery;
     private List<User> users;
     private static int counter = 0;
+    private OrderTemplates orderedItems;
+
+    public Order(OrderTemplates template) {
+        this.orderedItems = template;
+        this.delivery = new PostDeliveryStrategy();
+        this.payment = new CreditCardPaymentStrategy();
+    }
 
     public void addUser(User user) {
         counter++;
